@@ -1,0 +1,18 @@
+/* Custom CSS for Gafah Payment Gateway icon and label */
+#payment .payment_method_gafah label {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+}
+
+#payment .payment_method_gafah label img {
+    order: 1;
+    margin-right: 10px;
+    width: 35px; /* Adjust icon size as needed */
+}
+
+#payment .payment_method_gafah label .payment_method_title {
+    order: 2;
+    font-size: 16px;
+    color: #333;
+}
