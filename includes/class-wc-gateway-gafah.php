@@ -83,7 +83,7 @@ class WC_Gateway_Gafah extends WC_Payment_Gateway {
         );
 
         // Send request to Gafah external API
-        $response = wp_remote_post('http://localhost:8091/api/v1/initiateInvoice', array(
+        $response = wp_remote_post('https://gafah-external-wallet.azurewebsites.net/api/v1/initiateInvoice', array(
             'method'  => 'POST',
             'body'    => json_encode($payment_data),
             'headers' => array(
@@ -124,7 +124,7 @@ class WC_Gateway_Gafah extends WC_Payment_Gateway {
     
             if ($order) {
                 // Call an external API to check payment status
-                $response = wp_remote_get("http://localhost:8091/api/v1/paymentStatus?order_id={$order_key}", array(
+                $response = wp_remote_get("https://gafah-external-wallet.azurewebsites.net/api/v1/paymentStatus?order_id={$order_key}", array(
                     'headers' => array(
                         'x-api-key' => $this->apikey,  // API key sent in the headers
                     ),
